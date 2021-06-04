@@ -24,7 +24,7 @@ router.get('/:id', (req, res, next) => {
     Projects.get(req.params.id)
         .then(project => {
             if (!project) {
-                res.status(404);
+                res.status(404).json("No ID Detected");
             } else {
                 console.log('PROJECT: ', project);
                 res.status(200).json(project);
