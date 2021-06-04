@@ -66,7 +66,7 @@ Inside `api/projects/projects-router.js` build the following endpoints:
 - [ ] `[GET] /api/projects/:id/actions`
   - Returns an array of actions (could be empty) belonging to a project with the given `id`.
   - If there is no project with the given `id` it responds with a status code 404.
-
+.
 Inside `api/actions/actions-router.js` build endpoints for performing CRUD operations on _actions_:
 
 - [ ] `[GET] /api/actions`
