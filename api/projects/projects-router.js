@@ -56,7 +56,7 @@ router.delete('/:id', (req, res, next) => {
     Projects.get(id)
         .then(project => {
             if (!project) {
-                res.status(404);
+                res.status(404).json("No ID Detected");
                 next();
             } else {
                 return Projects.remove(id);
