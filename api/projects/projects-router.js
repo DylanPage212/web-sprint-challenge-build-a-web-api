@@ -13,7 +13,6 @@ router.get('/', (req, res, next) => {
                 res.status(404).json([]);
             }
             else{
-            console.log('PROJECTS: ', projects);
             res.status(200).json(projects);
             }
         })
@@ -26,7 +25,6 @@ router.get('/:id', (req, res, next) => {
             if (!project) {
                 res.status(404).json("No ID Detected");
             } else {
-                console.log('PROJECT: ', project);
                 res.status(200).json(project);
             }
         })
@@ -37,7 +35,6 @@ router.post('/', validateProject, (req, res, next) => {
     Projects.insert({ name: req.name, description: req.description, completed: req.body.completed })
         .then(project => {
             console.log(req);
-            console.log('PROJECT: ', project);
             res.json(project);
         })
         .catch(next);
@@ -72,7 +69,6 @@ router.get('/:id/actions', (req, res, next) => {
     const { id } = req.params;
     Projects.getProjectActions(id)
         .then(actions => {
-            console.log('PROJECT ACTIONS: ', actions);
             res.status(200).json(actions);
         })
         .catch(next);

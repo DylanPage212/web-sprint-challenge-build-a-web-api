@@ -21,7 +21,6 @@ router.get('/:id', (req, res, next) => {
                 res.status(404);
                 next();
             } else {
-                console.log('actions: ', actions);
                 res.status(200).json(actions);
             }
         })
@@ -57,7 +56,6 @@ router.put('/:id', validateAction, (req, res, next) => {
             }
         })
         .then(action => {
-            console.log('PUT ACTION: ', action);
             res.status(200).json(action);
         })
         .catch(next);
@@ -79,5 +77,14 @@ router.delete('/:id', (req, res, next) => {
         })
         .catch(next);
 });
+
+router.use((err, req, res, next) => { //eslint-disable-line
+    console.log(err.messsage)
+    res.status(err.status || 500).json({
+        custom: "Something went wrong in actions-router",
+        message: err.message,
+        stack: err.stack
+    })
+})
 
 module.exports = router;

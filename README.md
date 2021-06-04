@@ -159,7 +159,12 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+Node is useful because you can edit the environment in which your javascript program is run. Express makes this process simpler and more streamlined. 
 1. Understand and explain the use of Middleware.
+Middleware are basically funnels that you can send a req/payload through before they actually reach the endpoint in your server. More technically speaking, it's any callback function that takes req res and next as a parameter. I believe endpoints are also middleware. 
 1. The basic principles of the REST architectural style.
+Client => HTTP Request => Server => HTTP Response => Client
 1. Understand and explain the use of Express Routers.
+Express Routers are similar to React Hooks in terms of functionality, they make things more clean, and you can add Router specific functionality to them as well. 
 1. Describe tooling used to manually test the correctness of an API.
+There are a bunch of different ways to test and trouble shoot. Postman, Console.logs, catch(next), error codes, etc. 
